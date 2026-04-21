@@ -4,6 +4,7 @@ import com.example.praktikum7.model.User;
 import com.example.praktikum7.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.UUID;
 
 @Service
@@ -19,4 +20,9 @@ public class UserService {
         request.setId(UUID.randomUUID().toString());
         return userRepository.save(request);
     }
+
+    public List<User> getAllusers() {
+        return userRepository.findAll();
+    }
+
 }
